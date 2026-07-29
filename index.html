@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Box — Redesigned</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="backdrop-text">
+    <div class="eyebrow">Warm &amp; Grounded</div>
+    <h1>Chat Support</h1>
+    <p>A User Friendly Chat box -Tap the round button in the corner and try "hi", "pricing", or "help".</p>
+  </div>
+
+  <!-- Launcher -->
+  <button class="launcher" id="launcher" aria-label="Open chat">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8c-1.1 0-2.15-.22-3.1-.63L4 21l1.36-4.4A7.96 7.96 0 0 1 4 12Z"
+        stroke="#1b1200" stroke-width="1.8" stroke-linejoin="round"/>
+    </svg>
+    <span class="ping"></span>
+  </button>
+
+  <!-- Chat Panel -->
+  <div class="chat-panel" id="chatPanel">
+
+    <div class="chat-header">
+      <div class="ribbon-tag">Chat</div>
+      <div class="header-main">
+        <div class="avatar">FN</div>
+        <div class="header-info">
+          <div class="header-name">Front Desk</div>
+          <div class="status"><span class="dot"></span>Online now</div>
+        </div>
+      </div>
+      <button class="close-btn" id="closeBtn" aria-label="Close chat">&times;</button>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+    <!-- Placeholder lines -->
+</div>
+
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Write a message..." autocomplete="off">
+      <button id="sendBtn" aria-label="Send message">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="#1b1200" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+<script src="chat.js"></script>
+</body>
+</html>
