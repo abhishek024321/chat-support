@@ -276,18 +276,41 @@ body {
   box-shadow: 0 0 0 3px rgba(127,217,154,0.2);
 }
 
-.chat-header .close-btn {
-  background: transparent;
-  border: none;
-  color: var(--muted);
-  font-size: 20px;
-  cursor: pointer;
-  line-height: 1;
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   align-self: flex-start;
   margin-top: 4px;
 }
 
-.chat-header .close-btn:hover { color: #f2ede0; }
+.header-actions button {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 6px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.header-actions button:hover {
+  color: #f2ede0;
+  background: rgba(242,237,224,0.08);
+}
+
+.clear-btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+.chat-header .close-btn {
+  font-size: 20px;
+  line-height: 1;
+}
 
 /* ===== Messages ===== */
 .chat-messages {

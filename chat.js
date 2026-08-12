@@ -2,6 +2,7 @@
   const launcher = document.getElementById('launcher');
   const panel = document.getElementById('chatPanel');
   const closeBtn = document.getElementById('closeBtn');
+  const clearBtn = document.getElementById('clearBtn');
   const messages = document.getElementById('chatMessages');
   const input = document.getElementById('chatInput');
   const sendBtn = document.getElementById('sendBtn');
@@ -38,6 +39,12 @@
 
   launcher.addEventListener('click', openChat);
   closeBtn.addEventListener('click', closeChat);
+  clearBtn.addEventListener('click', clearChat);
+
+  function clearChat() {
+    messages.innerHTML = '';
+    addBubble("Hey there! How can I help you today?", 'bot');
+  }
 
   function addBubble(text, sender) {
     const div = document.createElement('div');
