@@ -149,7 +149,7 @@ body {
 }
 
 /* ===== Mobile ===== */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .launcher {
     right: 18px;
     bottom: 18px;

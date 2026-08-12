@@ -17,7 +17,7 @@
   window.addEventListener('orientationchange', setViewportHeight);
 
   function isMobile() {
-    return window.matchMedia('(max-width: 600px)').matches;
+    return window.matchMedia('(max-width: 768px)').matches;
   }
 
   function openChat() {
