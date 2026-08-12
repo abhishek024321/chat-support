@@ -8,8 +8,7 @@
   const sendBtn = document.getElementById('sendBtn');
   const ping = launcher.querySelector('.ping');
 
-  // Track the real viewport height on mobile, since 100vh includes
-  // the browser chrome (address bar) and causes the panel to be cut off.
+  
   function setViewportHeight() {
     document.documentElement.style.setProperty('--vh', (window.innerHeight * 0.01) + 'px');
   }
@@ -25,8 +24,7 @@
     panel.classList.add('open');
     launcher.classList.add('hidden');
     if (ping) ping.style.display = 'none';
-    // Avoid auto-focusing on mobile — it pops the keyboard immediately
-    // and fights with the viewport resize.
+   
     if (!isMobile()) input.focus();
     if (isMobile()) document.body.style.overflow = 'hidden';
   }
@@ -67,8 +65,7 @@
     const el = document.getElementById('typingIndicator');
     if (el) el.remove();
   }
-
-  // ---- Simple rule-based bot ----
+ 
   function getBotReply(rawText) {
     const text = rawText.toLowerCase().trim();
 
@@ -82,7 +79,7 @@
       { keywords: ['who develop you'], reply: "I was created by Abhishek Bhardwaj 💻 — a passionate Full stack developer from Roorkee." },
       { keywords: ['contact', 'email', 'phone'], reply: "You can reach the team through the contact page — want me to open it for you?" }
 ,
-  // ---------- Computer Science ----------
+  
   { keywords: ['hi', 'hello', 'hey'], reply: "Hey there! How can I help you today?" },
   { keywords: ['what is programming', 'define programming'], reply: "Programming is the process of writing instructions that a computer can execute to perform a task." },
   { keywords: ['what is algorithm', 'define algorithm'], reply: "An algorithm is a step-by-step procedure for solving a problem or performing a computation." },
@@ -98,7 +95,7 @@
   { keywords: ['what is machine learning'], reply: "Machine learning is a field of AI where systems learn patterns from data to make predictions or decisions." },
   { keywords: ['bye', 'goodbye', 'see you'], reply: "Goodbye! Happy coding!" },
 
-  // ---------- Fitness ----------
+ 
   { keywords: ['hi', 'hello coach', 'hey trainer'], reply: "Hey! Ready to crush your fitness goals today?" },
   { keywords: ['how to lose weight'], reply: "Weight loss generally comes from a calorie deficit — burning more calories than you consume, combined with regular exercise." },
   { keywords: ['how to build muscle', 'gain muscle'], reply: "Muscle growth requires progressive resistance training, adequate protein intake, and enough recovery time." },
@@ -150,6 +147,6 @@
     if (e.key === 'Enter') sendMessage();
   });
 
-  // Open by default so it's visible on load for preview
+ 
   openChat();
 })();
