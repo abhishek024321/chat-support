@@ -7,16 +7,33 @@
   const sendBtn = document.getElementById('sendBtn');
   const ping = launcher.querySelector('.ping');
 
+  // Track the real viewport height on mobile, since 100vh includes
+  // the browser chrome (address bar) and causes the panel to be cut off.
+  function setViewportHeight() {
+    document.documentElement.style.setProperty('--vh', (window.innerHeight * 0.01) + 'px');
+  }
+  setViewportHeight();
+  window.addEventListener('resize', setViewportHeight);
+  window.addEventListener('orientationchange', setViewportHeight);
+
+  function isMobile() {
+    return window.matchMedia('(max-width: 600px)').matches;
+  }
+
   function openChat() {
     panel.classList.add('open');
     launcher.classList.add('hidden');
     if (ping) ping.style.display = 'none';
-    input.focus();
+    // Avoid auto-focusing on mobile — it pops the keyboard immediately
+    // and fights with the viewport resize.
+    if (!isMobile()) input.focus();
+    if (isMobile()) document.body.style.overflow = 'hidden';
   }
 
   function closeChat() {
     panel.classList.remove('open');
     launcher.classList.remove('hidden');
+    document.body.style.overflow = '';
   }
 
   launcher.addEventListener('click', openChat);
